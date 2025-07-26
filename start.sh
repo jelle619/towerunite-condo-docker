@@ -7,9 +7,9 @@ echo ">> Running SteamCMD as root..."
 echo ">> Preparing runtime..."
 cp /data/linux64/steamclient.so /data/Tower/Binaries/Linux/ || echo "steamclient.so not found, skipping copy"
 
-# Set proper ownership for runtime files
+# Set correct ownership for /data so 'tower' can access it
 chown -R tower:tower /data
 
-echo ">> Launching Tower Unite as 'tower'..."
+echo ">> Launching Tower Unite as 'tower' using runuser..."
 cd /data
-exec su-exec tower ./Tower/Binaries/Linux/TowerServer-Linux-Shipping "$MAP_NAME" -log -Port=7777 -QueryPort=27015 -nosteamclient
+exec runuser -u tower -- ./Tower/Binaries/Linux/TowerServer-Linux-Shipping "$MAP_NAME" -log -Port=7777 -QueryPort=27015 -nosteamclient
