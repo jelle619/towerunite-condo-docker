@@ -1,4 +1,5 @@
 # Tower Unite Dedicated Condo - Docker Container
+![Tower Unite Logo](https://www.towerunite.com/images/logo2.png)
 This is a Docker container that allows you to host a condo in Tower Unite. The official documentation can be found [here](https://www.towerunite.com/guides/condo_dedicated_linux.html).
 
 ## Getting started
