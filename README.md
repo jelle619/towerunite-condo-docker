@@ -3,7 +3,7 @@
 ---
 
 # Tower Unite Dedicated Condo - Docker Container
-This is a Docker container that allows you to host a condo in Tower Unite. The official documentation can be found [here](https://www.towerunite.com/guides/condo_dedicated_linux.html).
+This is an unofficial Docker container that allows you to host a condo in Tower Unite. The official documentation can be found [here](https://www.towerunite.com/guides/condo_dedicated_linux.html).
 
 ## Getting started
 Assuming [Docker](https://docs.docker.com/engine/install/) and Docker Compose have already been installed, create a folder that will house your Docker Compose file, TowerServer.ini file and data folder and go into that directory.
