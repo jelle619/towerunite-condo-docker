@@ -1,20 +1,19 @@
 FROM steamcmd/steamcmd:latest
 
-# Create non-root user and set permissions
-RUN useradd -m -d /home/steam steam \
+# Create non-root user 'tower'
+RUN useradd -m -d /home/tower tower \
     && mkdir -p /data \
-    && chown -R steam:steam /home/steam /data
+    && chown -R tower:tower /home/tower /data
 
+# Install su-exec (lightweight privilege dropper, like gosu)
+RUN apt-get update && apt-get install -y su-exec && apt-get clean
+
+# Set environment
 ENV MAP_NAME="/Game/Maps/C_Condo"
 
-# Copy start script
+# Copy launch script
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
 
-# Use steam user
-USER steam
-
-# Set working directory
-WORKDIR /home/steam
-
+# Remain as root; script will drop to 'tower' before launching the game
 ENTRYPOINT ["/start.sh"]
