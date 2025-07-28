@@ -16,7 +16,7 @@ Then, create a `docker-compose.yml` file as follows. You may use a text editor s
 ```yaml
 services:
   towerunite:
-    image: ghcr.io/jelle619/towerunite-condo-docker:master
+    image: ghcr.io/jelle619/towerunite-dedicated-condo-docker:master
     container_name: towerunite
     environment:
       - MAP_NAME=/Game/Maps/C_Condo
